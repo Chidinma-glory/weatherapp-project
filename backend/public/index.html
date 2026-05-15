@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App | Real-Time Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+        <div class="cloud cloud3">☁️</div>
+    </div>
+    
+    <div class="container">
+        <div class="weather-app">
+            <div class="app-header">
+                <div class="logo">
+                    <span class="logo-icon">🌦️</span>
+                    <h1>Weather Forecast</h1>
+                </div>
+                <p class="tagline">Real-time weather updates for any city</p>
+            </div>
+
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <input type="text" id="cityInput" placeholder="Search city, e.g., New York, London, Tokyo..." autocomplete="off">
+                    <button id="searchBtn">
+                        <span>🔍</span> Search
+                    </button>
+                </div>
+                <div id="errorMessage" class="error-toast"></div>
+            </div>
+
+            <div id="loadingSpinner" class="spinner-overlay hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div id="welcomeMessage" class="welcome-card">
+                <div class="welcome-animation">🌈</div>
+                <h3>Welcome to Weather Forecast!</h3>
+                <p>Enter a city name above to get current weather conditions</p>
+                <div class="example-cities">
+                    <span class="example-badge">London</span>
+                    <span class="example-badge">Tokyo</span>
+                    <span class="example-badge">Paris</span>
+                    <span class="example-badge">Dubai</span>
+                </div>
+            </div>
+
+            <div id="weatherContent" class="weather-card hidden">
+                <div class="weather-header">
+                    <div class="city-info">
+                        <h2 id="cityName">City Name</h2>
+                        <p id="countryName">Country</p>
+                    </div>
+                    <div class="weather-icon-large">
+                        <img id="weatherIcon" alt="Weather condition">
+                    </div>
+                </div>
+
+                <div class="temperature-display">
+                    <span class="temp-value" id="temperature">--</span>
+                    <span class="temp-unit">°C</span>
+                </div>
+
+                <div class="condition-badge">
+                    <span id="condition">---</span>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">💧</div>
+                        <div class="detail-info">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity">--%</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">🌬️</div>
+                        <div class="detail-info">
+                            <span class="detail-label">Wind Speed</span>
+                            <span class="detail-value" id="windSpeed">-- km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>Powered by <strong>WeatherAPI.com</strong> | Real-time weather data</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
